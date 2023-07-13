@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- Add all necessary links -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Add TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind configurations -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Primary colors
+              lightRed: "hsl(0, 100%, 67%)",
+              orangeyYellow: "hsl(39, 100%, 56%)",
+              greenTeal: "hsl(166, 100%, 37%)",
+              cobaltBlue: "hsl(234, 85%, 45%)",
+              // Neutral colors
+              White: "hsl(0, 0%, 100%)",
+              paleBlue: "hsl(221, 100%, 96%)",
+              lightLavender: "hsl(241, 100%, 89%)",
+              darkGrayBlue: "hsl(224, 30%, 27%)",
+              // Gradients (Background)
+              lightSlateBlue: "hsl(252, 100%, 67%)",
+              lightRoyalBlue: "hsl(241, 81%, 54%)",
+              // Gradients (Circle)
+              violetBlue: "hsla(256, 72%, 46%, 1)",
+              persianBlue: "hsla(241, 72%, 46%, 0)",
+            },
+            fontFamily: {
+              sans: ["Hanken Grotesk", "sans-serif"],
+            },
+            screens: {
+              sm: "375px",
+              xl: "1440px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Title -->
+    <title>Results summary component</title>
+  </head>
+  <body>
+    <!-- Main container -->
+    <flex class="flex justify-center items-center bg-white">
+      <!-- Card -->
+      <bg-white class="md:rounded-[32px] shadow shadow-2xl shadow-blue-200">
+        <!-- Flex container -->
+        <div class="flex flex-col md:flex-row">
+          <!-- Hero part -->
+          <div
+            class="flex flex-col bg-gradient-to-b from-lightSlateBlue to-lightRoyalBlue items-center p-10 rounded-b-[32px] md:rounded-[32px] md:w-[330px]"
+          >
+            <!-- Your Result -->
+            <div class="font-bold text-lightLavender text-[18px] md:text-[20px]">
+              Your Result
+            </div>
+            <!-- Circle -->
+            <div
+              class="flex flex-col items-center rounded-full bg-gradient-to-b from-violetBlue to-persianBlue p-8 w-36 h-36 md:w-48 md:h-48 md:p-14 my-6"
+            >
+              <div class="text-6xl md:text-7xl font-bold text-white">76</div>
+              <div class="text-slate-400 font-bold">of 100</div>
+            </div>
+            <!-- Title -->
+            <div class="font-bold text-white text-2xl mb-1">Great</div>
+            <!-- Message -->
+            <div class="text-lightLavender text-center text-[18px]">
+              You scored higher than 65% of the people who have taken these
+              tests.
+            </div>
+          </div>
+          <!-- Summary part -->
+          <div class="flex flex-col p-7 md:w-[330px]">
+            <!-- Title -->
+            <div class="font-bold text-xl text-darkGrayBlue mb-4">Summary</div>
+            <!-- List -->
+            <div class="flex flex-col space-y-4">
+              <!-- Reaction -->
+              <div class="flex bg-lightRed bg-opacity-[0.06] rounded-lg p-4 justify-between items-center ">
+                <!-- Name -->
+                <div class="flex space-x-3">
+                  <img src="./images/icon-reaction.svg" class="w-5">
+                  <div class="text-[18px] text-lightRed font-bold" >Reaction</div>
+                </div>
+                <!-- Value -->
+                <div class="flex font-bold">
+                  <div class="text-darkGrayBlue">80 <span class="text-gray-400">&nbsp;/ 100</span></div>
+                </div>
+              </div>
+              <!-- Memory -->
+              <div class="flex bg-orangeyYellow bg-opacity-[0.06] rounded-lg p-4 justify-between items-center">
+                <!-- Name -->
+                <div class="flex space-x-3">
+                  <img src="./images/icon-memory.svg" class="w-5">
+                  <div class="text-[18px] text-orangeyYellow font-bold" >Memory</div>
+                </div>
+                <!-- Value -->
+                <div class="flex font-bold">
+                  <div class="text-darkGrayBlue">92 <span class="text-gray-400">&nbsp;/ 100</span></div>
+                </div>
+              </div>
+              <!-- Verbal -->
+              <div class="flex bg-greenTeal bg-opacity-[0.06] rounded-lg p-4 justify-between items-center">
+                <!-- Name -->
+                <div class="flex space-x-3">
+                  <img src="./images/icon-verbal.svg" class="w-5">
+                  <div class="text-[18px] text-greenTeal font-bold" >Verbal</div>
+                </div>
+                <!-- Value -->
+                <div class="flex font-bold">
+                  <div class="text-darkGrayBlue">61 <span class="text-gray-400">&nbsp;/ 100</span></div>
+                </div>
+              </div>
+              <!-- Visual -->
+              <div class="flex bg-cobaltBlue bg-opacity-[0.06] rounded-lg p-4 justify-between items-center">
+                <!-- Name -->
+                <div class="flex space-x-3">
+                  <img src="./images/icon-visual.svg" class="w-5">
+                  <div class="text-[18px] text-cobaltBlue font-bold" >Visual</div>
+                </div>
+                <!-- Value -->
+                <div class="flex font-bold">
+                  <div class="text-darkGrayBlue">72 <span class="text-gray-400">&nbsp;/ 100</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- Button -->
+            <button class="text-white text-lg font-bold bg-darkGrayBlue mt-8 p-4 md:p-3 rounded-full bg-gradient-to-b md:hover:from-lightSlateBlue md:hover:to-lightRoyalBlue">
+              Continue
+            </button>
+          </div>
+        </div>
+      </bg-white>
+    </flex>
+  </body>
+</html>
